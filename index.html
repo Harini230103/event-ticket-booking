@@ -10,7 +10,6 @@
     <header>
         <h1>Event Ticket Booking</h1>
         <nav>
-            
             <a href="logout.html">Logout</a>
         </nav>
     </header>
@@ -27,15 +26,20 @@
     
     <script>
         function loginUser() {
-            const email = document.getElementById("login-email").value;
-            const password = document.getElementById("login-password").value;
-            
-            if (email && password) {
-                // Simulating login success and redirecting
-                alert("Login successful! Redirecting to dashboard...");
-                window.location.href = "dashboard.html"; // Redirecting to a new page
-            } else {
+            const email = document.getElementById("login-email").value.trim();
+            const password = document.getElementById("login-password").value.trim();
+
+            if (!email || !password) {
                 alert("Please enter both email and password.");
+                return;
+            }
+
+            // Simulated authentication (you can replace this with a real authentication check)
+            if (email === "user@example.com" && password === "password123") {
+                alert("Login successful! Redirecting to dashboard...");
+                window.location.href = "dashboard.html"; // Ensure dashboard.html exists
+            } else {
+                alert("Invalid email or password. Please try again.");
             }
         }
     </script>
